@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>img</title>
+    </head>
+<style>
+    div.box img{
+        background-repeat: no-repeat;
+        background-size: auto;
+        width: 100px;
+        height: 100px;
+    }
+    *
+    {
+        margin: 0;
+        padding: 0;
+    }
+   body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: black;
+   }
+   div.box{
+    position: relative;
+    width: 200px;
+    height: 200px;
+      transform-style: preserve-3d;   
+      animation: ani 20s linear infinite;
+    }
+   @keyframes ani
+   {
+    0%{
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(1000px) rotateY(360deg);
+    }
+   }
+ div.box span{
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i)*45deg))translateZ(400px);
+    -webkit-box-reflect: below 10px linear-gradient(transparent,transparent,black);
+ }
+ div.box span img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+ }
+ audio{
+   margin-top: 40%;
+   background-color: black;
+ }
+</style>
+    <body>
+        <div class="box">
+    <span style="--i:1;"><img src="img/food first.jpg"></span>
+    <span style="--i:2"><img src="img/food.jpg"></span>
+    <span style="--i:3"><img src="img/food 2.jpg"></span>
+    <span style="--i:4"><img src="img/food 3.jpg"></span>
+    <span style="--i:5"><img src="img/food 4.jpg"></span>
+    <span style="--i:6;"><img src="img/food 5.jpg"></span>
+    <span style="--i:7"><img src="img/food 6.jpg"></span>
+    <span style="--i:8"><img src="img/food 7.jpg"></span>
+</div>
+<audio controls src="img/WhatsApp Audio 2022-09-12 at 10.35.05 AM.mpeg"></audio>
+    </body>
+
+</html>
